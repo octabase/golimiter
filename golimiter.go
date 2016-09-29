@@ -3,6 +3,12 @@
 
 package golimiter
 
+import (
+	"runtime"
+	"sync"
+	"sync/atomic"
+)
+
 type GoLimiter interface {
 	Limit(limit int64)
 	GetLimit() int64
