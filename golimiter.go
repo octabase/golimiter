@@ -25,7 +25,7 @@ type goLimiter struct {
 
 func New() GoLimiter {
 	return &goLimiter{
-		limit:  runtime.NumCPU(),
+		limit:  int64(runtime.NumCPU()),
 		active: 0,
 		cond:   sync.NewCond(&sync.Mutex{}),
 	}
